@@ -1,0 +1,24 @@
+.fade-in-section {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition: none;
+  will-change: auto;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Supprimer l'overflow sur le body et ajouter sur le conteneur principal */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.token-form-container {
+  overflow-x: hidden;
+  width: 100%;
+} 

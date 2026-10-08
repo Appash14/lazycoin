@@ -1,0 +1,22 @@
+node_modules/
+.env
+venv/
+.DS_Store
+*.log
+build/
+dist/
+.cache/
+
+# Secrets : ne jamais versionner
+.env
+.env.*
+!.env.example
+**/.env
+**/keypairs/
+**/.config/solana/
+id.json
+mint.json
+*-keypair.json
+solana-data/
+*:Zone.Identifier
+__pycache__/

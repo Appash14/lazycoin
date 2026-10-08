@@ -1,0 +1,56 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+*.pyc
+.Python
+env/
+.env
+
+# IDE et éditeurs
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Dossiers temporaires
+uploads/
+build/
+dist/
+tmp/
+
+# Fichiers de configuration
+mint_address.json
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+logs/
+*.log
+
+# Fichiers de build
+/build
+/dist
+.next/
+out/
+
+# Fichiers de cache
+.cache/
+.npm/
+
+# Fichiers de test
+coverage/
+.nyc_output/
+
+# Fichiers système
+.DS_Store
+Thumbs.db 

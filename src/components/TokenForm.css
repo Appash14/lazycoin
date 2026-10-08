@@ -1,0 +1,739 @@
+.token-form-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.token-form {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00b894 0%, #00d1a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.emoji-icon {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  color: initial !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.mode-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.mode-button {
+  padding: 1rem 2rem;
+  border: 2px solid rgba(0, 184, 148, 0.1);
+  border-radius: 16px;
+  background: white;
+  color: #2c2c2c;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.mode-button .mode-icon {
+  font-size: 1.4rem;
+  color: initial; /* Couleur native pour les émojis */
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+
+.mode-button.active {
+  background: #00b894;
+  color: white;
+  border-color: #00b894;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 184, 148, 0.2);
+}
+
+.mode-button.active .mode-icon {
+  color: initial; /* Garde la couleur native même quand le bouton est actif */
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-section {
+  background: rgba(0, 184, 148, 0.03);
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 184, 148, 0.1);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  color: #2c2c2c;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.section-icon {
+  font-size: 1.6rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00b894;
+  box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.1);
+  outline: none;
+}
+
+.file-upload {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #00C2A8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  overflow: hidden;
+}
+
+.file-upload::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300C2A8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v4h3l-4 4-4-4h3z"/></svg>');
+  opacity: 0.1;
+}
+
+.file-upload input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #00C2A8;
+  font-weight: 500;
+}
+
+.upload-label::before {
+  content: '📸';
+  font-size: 2rem;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #00b894 0%, #00d1a0 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 184, 148, 0.3);
+}
+
+.button-icon {
+  font-size: 1.4rem;
+}
+
+.copy-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.copy-form .form-section {
+  margin: 2rem 0;
+  padding: 2rem;
+}
+
+.connected-title {
+  display: block;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.now-highlight {
+  color: #00b894;
+  background: linear-gradient(135deg, #00b894 0%, #00d1a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  font-weight: 900;
+  margin: 0 0.5rem;
+}
+
+.rocket-emoji {
+  font-size: 3rem;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+.connected-subtitle {
+  color: #a0aec0;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Colonne gauche */
+.form-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Colonne droite */
+.form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Style spécifique pour la description */
+.description-group {
+  height: 100%;
+}
+
+.description-group textarea {
+  height: calc(100% - 30px); /* Hauteur totale moins la hauteur du label */
+  min-height: unset;
+  max-height: unset;
+  resize: none;
+}
+
+/* Ajustement des champs sociaux */
+.social-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.social-fields .form-group {
+  margin-bottom: 0;
+}
+
+.copy-section {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.submit-button:active {
+  transform: translateY(1px);
+}
+
+.copy-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #00b894;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.copy-button:hover {
+  color: #007f6e;
+}
+
+.error-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #FED7D7;
+  color: #C53030;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.wallet-warning {
+  text-align: center;
+  padding: 2rem;
+  background: #EDF2F7;
+  border-radius: 8px;
+  color: #4A5568;
+}
+
+.wallet-warning p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.required {
+  color: #00b894;
+  margin-left: 4px;
+}
+
+@media (max-width: 1200px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .token-form-container {
+    padding: 1rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .connected-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 50px;
+    white-space: normal;
+    width: 90%;
+  }
+  
+  .rocket-emoji {
+    font-size: 2rem;
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+  }
+  
+  .mode-selector {
+    flex-direction: column;
+  }
+  
+  .mode-button {
+    width: 100%;
+  }
+  
+  .form-section {
+    padding: 1.5rem;
+  }
+}
+
+/* Placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #A0AEC0;
+}
+
+/* Focus visible outline for accessibility */
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  outline: 2px solid #4299E1;
+  outline-offset: 2px;
+}
+
+/* Style pour le champ d'upload d'image */
+.form-group input[type="file"] {
+  padding: 0.5rem 0;
+}
+
+.form-group input[type="file"]::file-selector-button {
+  background: #4299E1;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+  background: #3182CE;
+}
+
+/* Ajout de styles pour une apparence moderne */
+.token-form {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajustement du conteneur principal dans App.js */
+.main-content {
+  display: none;
+}
+
+/* Supprimer les styles qui créent le conteneur ombré en arrière-plan */
+.app-content {
+  display: none;
+}
+
+/* Assure-toi que tous les émojis gardent leur couleur native */
+.emoji, 
+.emoji-icon, 
+[class*="emoji"] {
+  color: initial !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+/* Assurer que tous les emojis gardent leur couleur native */
+.mode-icon,
+.section-icon,
+.button-icon,
+[class*="emoji"] {
+  color: initial !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+/* Ajuster le titre pour les emojis de chaque côté */
+.form-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00b894 0%, #00d1a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+/* Le texte du titre garde son gradient */
+.form-title span:not(.emoji-icon) {
+  background: linear-gradient(135deg, #00b894 0%, #00d1a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Supprimer les styles redondants d'emoji */
+.mode-icon,
+.section-icon,
+.button-icon {
+  display: none;
+}
+
+/* Styles pour le groupe checkbox */
+.checkbox-group {
+  margin: 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 184, 148, 0.03);
+  border: 1px solid rgba(0, 184, 148, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.checkbox-label:hover {
+  background: rgba(0, 184, 148, 0.05);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 184, 148, 0.05);
+}
+
+/* Style personnalisé pour la case à cocher */
+.checkbox-label input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 184, 148, 0.3);
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+  background: #00b894;
+  border-color: #00b894;
+}
+
+/* Création de l'icône de check */
+.checkbox-label input[type="checkbox"]:checked::before {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style pour le texte du label */
+.checkbox-label span {
+  font-size: 0.95rem;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Animation au hover */
+.form-section .checkbox-group:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 184, 148, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Ajustement pour le formulaire */
+.form-section:last-of-type {
+  margin-bottom: 1rem;
+}
+
+/* Ajustement pour le mode mobile */
+@media (max-width: 768px) {
+  .checkbox-label {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Style pour le conteneur de la checkbox */
+.form-section .checkbox-group {
+  background: rgba(0, 184, 148, 0.03);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 184, 148, 0.1);
+  margin: 1rem 0;
+}
+
+.options-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.custom-address-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.custom-address-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.custom-address-type-select {
+  padding: 0.75rem;
+  border: 2px solid rgba(0, 184, 148, 0.3);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: white;
+  color: #2c2c2c;
+  transition: all 0.3s ease;
+  flex: 0 0 auto;
+}
+
+.custom-address-input {
+  flex: 1 1 auto;
+  max-width: 150px;
+}
+
+.custom-address-example {
+  color: #718096;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.custom-address-preview {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: rgba(0, 184, 148, 0.05);
+  border-radius: 8px;
+  border: 1px dashed rgba(0, 184, 148, 0.3);
+  font-family: monospace;
+  font-size: 0.9rem;
+  width: 100%;
+  color: #4a5568;
+}
+
+.timeout-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+}
+
+.timeout-dialog-content {
+  background-color: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 550px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.timeout-dialog h3 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.timeout-dialog-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.continue-button,
+.random-button {
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.continue-button {
+  background-color: #00c087;
+  color: white;
+}
+
+.continue-button:hover {
+  background-color: #00a777;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 192, 135, 0.3);
+}
+
+.random-button {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.random-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-label {
+  flex-shrink: 0;  /* Empêche la checkbox de se rétrécir */
+}
+
+/* Ajustement pour le mode mobile */
+@media (max-width: 768px) {
+  .options-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .custom-address-input {
+    max-width: 100%;
+  }
+}
